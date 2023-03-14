@@ -44,11 +44,11 @@ static void exit_with(int exit_code, const char *format, ...) {
   exit(exit_code);
 }
 
-static void success(const char *message) {
+static void success(void) {
   if (!g_verbose) {
     return;
   }
-  fprintf(stdout, "[+] %s.\n", (message == NULL) ? "  Done" : message);
+  fprintf(stdout, "[+]   Done.\n");
 }
 
 static void now(const char *format, ...) {
@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
   if (ctx == NULL) {
     exit_with(2, "Could not initialize seccomp.");
   }
-  success(NULL);
+  success();
 
   now("Adding rule block TIOCSTI ioctls");
   const int res_tiocsti =
@@ -135,7 +135,7 @@ int main(int argc, char *argv[]) {
   if (res_tiocsti != 0) {
     exit_with(3, "Could not add rule to ioctl TIOCSTI.");
   }
-  success(NULL);
+  success();
 
   now("Adding rule block TIOCLINUX ioctls");
   const int res_tioclinux =
@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
   if (res_tioclinux != 0) {
     exit_with(4, "Could not add rule to block ioctl TIOCLINUX.");
   }
-  success(NULL);
+  success();
 
   if (g_bpf_filename != NULL) {
     now("Dumping seccomp filter BPF program into file \"%s\"", g_bpf_filename);
@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
       exit_with(7, "Failed to close file \"%s\"", g_bpf_filename);
     }
 
-    success(NULL);
+    success();
   }
 
   if (exec_upcoming) {
@@ -184,12 +184,12 @@ int main(int argc, char *argv[]) {
       errno = -res_load;
       exit_with(8, "Could not load seccomp filter into the kernel.");
     }
-    success(NULL);
+    success();
   }
 
   now("Releasing libseccomp");
   seccomp_release(ctx);
-  success(NULL);
+  success();
 
   if (!exec_upcoming) {
     exit_with(0, NULL);
