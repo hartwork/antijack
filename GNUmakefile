@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 CFLAGS += -std=c99 -Wall -Wextra -pedantic `pkg-config --cflags libseccomp`
-LDFLAGS += `pkg-config --libs libseccomp`
+LDLIBS += `pkg-config --libs libseccomp`
 
 .PHONY: all
 all: antijack
