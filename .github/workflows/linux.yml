@@ -1,0 +1,100 @@
+# Copyright (c) 2023 Sebastian Pipping <sebastian@pipping.org>
+# SPDX-License-Identifier: Apache-2.0
+
+name: Build and on Linux
+
+# Drop permissions to minimum, for security
+permissions:
+  contents: read
+
+on:
+  pull_request:
+  push:
+  schedule:
+    - cron: '0 3 * * 5'  # Every Friday at 3am
+
+jobs:
+  linux:
+    name: Build (${{ matrix.cc }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - cc: gcc-11
+            cxx: g++-11
+            clang_major_version: null
+            clang_repo_suffix: null
+            runs-on: ubuntu-22.04
+          - cc: gcc-12
+            cxx: g++-12
+            clang_major_version: null
+            clang_repo_suffix: null
+            runs-on: ubuntu-22.04
+          - cc: clang-15
+            cxx: clang++-15
+            clang_major_version: 15
+            clang_repo_suffix: -15
+            runs-on: ubuntu-22.04
+          - cc: clang-16
+            cxx: clang++-16
+            clang_major_version: 16
+            clang_repo_suffix: -16
+            runs-on: ubuntu-22.04
+          - cc: clang-17
+            cxx: clang++-17
+            clang_major_version: 17
+            clang_repo_suffix:
+            runs-on: ubuntu-22.04
+    steps:
+      - name: Add Clang/LLVM repositories
+        if: "${{ contains(matrix.cxx, 'clang') }}"
+        run: |-
+          set -x
+          source /etc/os-release
+          wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+          sudo add-apt-repository "deb http://apt.llvm.org/${UBUNTU_CODENAME}/ llvm-toolchain-${UBUNTU_CODENAME}${{ matrix.clang_repo_suffix }} main"
+
+      - name: Install build dependencies
+        run: |-
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends \
+            libseccomp-dev
+
+      - name: Install build dependency Clang ${{ matrix.clang_major_version }}
+        if: "${{ contains(matrix.cxx, 'clang') }}"
+        run: |-
+          sudo apt-get install --yes --no-install-recommends -V \
+              clang-${{ matrix.clang_major_version }}
+
+      - name: Checkout Git branch
+        uses: actions/checkout@v3
+
+      - name: 'Build'
+        env:
+          CC: ${{ matrix.cc }}
+          CXX: ${{ matrix.cxx }}
+          CFLAGS: -Werror
+          LDFLAGS: -Wl,--as-needed
+        run: |-
+          make
+
+      - name: 'Smoke test'
+        run: |-
+          set -x
+
+          git clone https://github.com/jwilk/ttyjack
+          pushd ttyjack
+            git checkout -q 8e47f74fb288ca85bbb1b1ff63755a7ba8d56247  # for CI stability
+            make
+          popd
+
+          ./antijack --help
+
+          ./antijack -- echo hello
+
+          ( set +e ; ./antijack -- sh -c 'exit 123' ; [[ $? == 123 ]] )
+
+          ( set +e ; ./antijack -v --dump filter.bpf -- ttyjack/ttyjack echo nope ; [[ $? == 159 ]] )
+
+          [[ $(wc -c < filter.bpf) -gt 0 ]]
