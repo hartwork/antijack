@@ -14,7 +14,8 @@ and is its counterpart in some sense, hence the name.
   into a file for use with
   e.g. [bubblewrap](https://github.com/containers/bubblewrap)
   a la `bwrap --seccomp 3 [..] 3< <(antijack --dump /dev/stdout)`.
-- demo mitigation at syscall level for Linux leveraging libseccomp.
+- demo mitigation at syscall level for Linux leveraging
+  [libseccomp](https://github.com/seccomp/libseccomp).
   **May not be enough!**
 
 
