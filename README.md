@@ -22,6 +22,7 @@ and is its counterpart in some sense, hence the name.
 
 - C99 compiler
 - Linux build and target host
+- glibc ≥ 2.32
 - [libseccomp](https://github.com/seccomp/libseccomp)
 
 
