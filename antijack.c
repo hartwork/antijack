@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
 
     const int export_bpf_res = seccomp_export_bpf(ctx, fd);
     if (export_bpf_res != 0) {
-      exit_with(6, "Faild to export BPF program to file \"%s\"",
+      exit_with(6, "Failed to export BPF program to file \"%s\"",
                 g_bpf_filename);
     }
 
