@@ -35,7 +35,7 @@ and is its counterpart in some sense, hence the name.
 
 # Related CVEs (not mine)
 
-- [CVE-2005-4890](https://nvd.nist.gov/vuln/detail/CVE-2005-4890) for `su` of GNU coreutils and `sudo`
+- [CVE-2005-4890](https://nvd.nist.gov/vuln/detail/CVE-2005-4890) for `su` of util-linux and `sudo`
 - [CVE-2016-2568](https://nvd.nist.gov/vuln/detail/CVE-2016-2568) for `pkexec` of Polkit
 - [CVE-2016-2779](https://nvd.nist.gov/vuln/detail/CVE-2016-2779) for `runuser` of util-linux
 - [CVE-2017-5226](https://nvd.nist.gov/vuln/detail/CVE-2017-5226) for bubblewrap/flatpak
