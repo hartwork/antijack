@@ -1,3 +1,7 @@
+[![Build and on Linux](https://github.com/hartwork/antijack/actions/workflows/linux.yml/badge.svg)](https://github.com/hartwork/antijack/actions/workflows/linux.yml)
+[![Enforce clang-format](https://github.com/hartwork/antijack/actions/workflows/clang-format.yml/badge.svg)](https://github.com/hartwork/antijack/actions/workflows/clang-format.yml)
+
+
 # What is antijack?
 
 **antijack** was inspired by [ttyjack](https://github.com/jwilk/ttyjack)
