@@ -29,19 +29,19 @@ and is its counterpart in some sense, hence the name.
 
 # How to compile
 
-```console
-# make
+```
+$ make
 ```
 
 
 # Example output (on `x86_64`)
 
-```console
-# antijack --help
+```
+$ antijack --help
 usage: antijack [-v|--verbose] [-o|--dump PATH.bpf] [--] [COMMAND [ARG ..]]
    or: antijack -h|--help
 
-# antijack -v -- ttyjack echo nope
+$ antijack -v -- ttyjack echo nope
 [*] Initializing libseccomp...
 [+]   Done.
 [*] Adding rule block TIOCSTI ioctls...
@@ -74,9 +74,9 @@ action KILL;
 [*] Running ttyjack...
 Bad system call
 
-# antijack --dump filter.bpf
+$ antijack --dump filter.bpf
 
-# wc -c filter.bpf
+$ wc -c filter.bpf
 112 filter.bpf
 ```
 
