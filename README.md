@@ -89,6 +89,19 @@ $ wc -c filter.bpf
 # Related CVEs (not mine)
 
 - [CVE-2005-4890](https://nvd.nist.gov/vuln/detail/CVE-2005-4890) for `su` of util-linux and `sudo`
+- [CVE-2006-7098](https://nvd.nist.gov/vuln/detail/CVE-2006-7098) for Apache
+- [CVE-2007-1400](https://nvd.nist.gov/vuln/detail/CVE-2007-1400) for [plash](https://github.com/mseaborn/plash)
+- [CVE-2013-6409](https://nvd.nist.gov/vuln/detail/CVE-2013-6409) for [adequate](https://packages.debian.org/sid/adequate)
 - [CVE-2016-2568](https://nvd.nist.gov/vuln/detail/CVE-2016-2568) for `pkexec` of Polkit
 - [CVE-2016-2779](https://nvd.nist.gov/vuln/detail/CVE-2016-2779) for `runuser` of util-linux
-- [CVE-2017-5226](https://nvd.nist.gov/vuln/detail/CVE-2017-5226) for bubblewrap/flatpak
+- [CVE-2016-2781](https://nvd.nist.gov/vuln/detail/CVE-2016-2781) for `chroot` of GNU Coreutils
+- [CVE-2016-7545](https://nvd.nist.gov/vuln/detail/CVE-2016-7545) for `policycoreutils` of SELinux
+- [CVE-2016-9016](https://nvd.nist.gov/vuln/detail/CVE-2016-9016) for Firejail
+- [CVE-2016-10124](https://nvd.nist.gov/vuln/detail/CVE-2016-10124) for `lxc-attach` of LXC
+- [CVE-2017-5226](https://nvd.nist.gov/vuln/detail/CVE-2017-5226) for bubblewrap (or Flatpak)
+- [CVE-2019-7303](https://nvd.nist.gov/vuln/detail/CVE-2019-7303) for `snapd` of Snap
+- [CVE-2019-10063](https://nvd.nist.gov/vuln/detail/CVE-2019-10063) for Flatpak
+- [CVE-2019-11460](https://nvd.nist.gov/vuln/detail/CVE-2019-11460) for `gnome-desktop` of GNOME
+- [CVE-2019-11461](https://nvd.nist.gov/vuln/detail/CVE-2019-11461) for Nautilus of GNOME
+- [CVE-2020-13753](https://nvd.nist.gov/vuln/detail/CVE-2020-13753) for WebKitGTK
+- [CVE-2023-28339](https://nvd.nist.gov/vuln/detail/CVE-2023-28339) for OpenDoas
