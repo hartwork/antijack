@@ -9,7 +9,7 @@ and is its counterpart in some sense, hence the name.
 
 **antijack**'s mission is threefold:
 
-- allow execution of a program in a way where it *cannot* inject
+- demo execution of a program in a way where it *cannot* inject
   commands via ioctls `TIOCSTI` and/or `TIOCLINUX`
   into the surrounding controlling terminal,
   e.g. try `antijack ttyjack echo nope`.
