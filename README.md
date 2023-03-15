@@ -61,10 +61,10 @@ $ antijack -v -- ttyjack echo nope
 if ($arch == 3221225534)
   # filter for syscall "ioctl" (16) [priority: 65532]
   if ($syscall == 16)
-    if ($a1.hi32 == 0)
-      if ($a1.lo32 == 21532)
+    if ($a1.hi32 & 0x00000000 == 0)
+      if ($a1.lo32 & 0xffffffff == 21532)
         action KILL_PROCESS;
-      if ($a1.lo32 == 21522)
+      if ($a1.lo32 & 0xffffffff == 21522)
         action KILL_PROCESS;
   # default action
   action ALLOW;
