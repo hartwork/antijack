@@ -131,7 +131,7 @@ int main(int argc, char *argv[]) {
   now("Adding rule block TIOCSTI ioctls");
   const int res_tiocsti =
       seccomp_rule_add(ctx, SCMP_ACT_KILL_PROCESS, SCMP_SYS(ioctl), 1,
-                       SCMP_A1(SCMP_CMP_EQ, TIOCSTI));
+                       SCMP_A1(SCMP_CMP_MASKED_EQ, 0xFFFFFFFFu, TIOCSTI));
   if (res_tiocsti != 0) {
     exit_with(3, "Could not add rule to ioctl TIOCSTI.");
   }
@@ -140,7 +140,7 @@ int main(int argc, char *argv[]) {
   now("Adding rule block TIOCLINUX ioctls");
   const int res_tioclinux =
       seccomp_rule_add(ctx, SCMP_ACT_KILL_PROCESS, SCMP_SYS(ioctl), 1,
-                       SCMP_A1(SCMP_CMP_EQ, TIOCLINUX));
+                       SCMP_A1(SCMP_CMP_MASKED_EQ, 0xFFFFFFFFu, TIOCLINUX));
   if (res_tioclinux != 0) {
     exit_with(4, "Could not add rule to block ioctl TIOCLINUX.");
   }
