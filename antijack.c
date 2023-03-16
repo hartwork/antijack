@@ -207,6 +207,6 @@ int main(int argc, char *argv[]) {
   case ENOENT:
     exit_with(127, "%s", argv[optind]);
   default:
-    exit_with(9, "failed to run command \"%s\"", argv[optind]);
+    exit_with(9, "Failed to run command \"%s\"", argv[optind]);
   }
 }
