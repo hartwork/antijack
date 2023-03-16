@@ -91,6 +91,7 @@ $ wc -c filter.bpf
 - [CVE-2005-4890](https://nvd.nist.gov/vuln/detail/CVE-2005-4890) for `su` of util-linux and `sudo`
 - [CVE-2006-7098](https://nvd.nist.gov/vuln/detail/CVE-2006-7098) for Apache
 - [CVE-2007-1400](https://nvd.nist.gov/vuln/detail/CVE-2007-1400) for [plash](https://github.com/mseaborn/plash)
+- [CVE-2011-1408](https://nvd.nist.gov/vuln/detail/CVE-2011-1408) for `ikiwiki-mass-rebuild` of ikiwiki
 - [CVE-2013-6409](https://nvd.nist.gov/vuln/detail/CVE-2013-6409) for [adequate](https://packages.debian.org/sid/adequate)
 - [CVE-2016-2568](https://nvd.nist.gov/vuln/detail/CVE-2016-2568) for `pkexec` of Polkit
 - [CVE-2016-2779](https://nvd.nist.gov/vuln/detail/CVE-2016-2779) for `runuser` of util-linux
