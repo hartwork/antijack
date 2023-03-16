@@ -22,6 +22,23 @@ and is its counterpart in some sense, hence the name.
   [libseccomp](https://github.com/seccomp/libseccomp).
   **May not be enough!**
 
+It should be noted that:
+
+- Alternative options for mitigations include:
+  - `setsid(2)` (or `setsid(1)`) with drawbacks or
+  - use of a PTY.
+- The defaults for `su` and `sudo` and known-vulnerable as of 2023-03-16.
+  - For `su` it takes `--pty`.
+  - For `sudo` it takes `Defaults use_pty` in `/etc/sudoers`.
+- Both util-linux and GNU coreutils have reverted their
+  use of [libseccomp](https://github.com/seccomp/libseccomp) for mitigation:
+  - https://github.com/util-linux/util-linux/commit/23f75093264aae5d58d61016cb1a29d8ebdfa157
+  - https://github.com/coreutils/coreutils/commit/f5d7c0842ef7adc2be6e85f9ef66b35ebbbd6a61
+- The syscall filter is easy to mis-implement,
+  e.g. see [CVE-2019-10063](https://nvd.nist.gov/vuln/detail/CVE-2019-10063)
+  and/or
+  [commit 5f6bd3aa6e6a15f644923afa66fb0068736e2b8d](https://github.com/hartwork/antijack/commit/5f6bd3aa6e6a15f644923afa66fb0068736e2b8d)
+
 
 # Requirements
 
