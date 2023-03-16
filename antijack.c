@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
                        SCMP_A1(SCMP_CMP_MASKED_EQ, 0xFFFFFFFFu, TIOCSTI));
   if (res_tiocsti != 0) {
     errno = -res_tiocsti;
-    exit_with(3, "Could not add rule to ioctl TIOCSTI.");
+    exit_with(3, "Could not add rule to block ioctl TIOCSTI.");
   }
   success();
 
