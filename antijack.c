@@ -37,6 +37,8 @@ static void exit_with(int exit_code, const char *format, ...) {
 
     fprintf(file, ": %s (%s/%d).\n", strerrordesc_np(errno_backup),
             strerrorname_np(errno_backup), errno_backup);
+
+    va_end(args);
   }
 
   free(g_bpf_filename);
@@ -63,6 +65,8 @@ static void now(const char *format, ...) {
   fprintf(file, "[*] ");
   vfprintf(file, format, args);
   fprintf(file, "...\n");
+
+  va_end(args);
 }
 
 static void usage(FILE *file) {
