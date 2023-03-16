@@ -27,7 +27,7 @@ It should be noted that:
 - Alternative options for mitigations include:
   - `setsid(2)` (or `setsid(1)`) with drawbacks or
   - use of a PTY.
-- The defaults for `su` and `sudo` and known-vulnerable as of 2023-03-16.
+- The defaults for `su` and `sudo` are known-vulnerable as of 2023-03-16.
   - For `su` it takes `--pty`.
   - For `sudo` it takes `Defaults use_pty` in `/etc/sudoers`.
 - Both util-linux and GNU coreutils have reverted their
