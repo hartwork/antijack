@@ -37,7 +37,7 @@ It should be noted that:
 - The syscall filter is easy to mis-implement,
   e.g. see [CVE-2019-10063](https://nvd.nist.gov/vuln/detail/CVE-2019-10063)
   and/or
-  [commit 5f6bd3aa6e6a15f644923afa66fb0068736e2b8d](https://github.com/hartwork/antijack/commit/5f6bd3aa6e6a15f644923afa66fb0068736e2b8d)
+  [commit 5f6bd3aa6e6a15f644923afa66fb0068736e2b8d](https://github.com/hartwork/antijack/commit/5f6bd3aa6e6a15f644923afa66fb0068736e2b8d).
 
 
 # Requirements
