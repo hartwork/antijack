@@ -124,6 +124,6 @@ $ wc -c filter.bpf
 - [CVE-2019-11461](https://nvd.nist.gov/vuln/detail/CVE-2019-11461) for Nautilus of GNOME
 - [CVE-2020-13753](https://nvd.nist.gov/vuln/detail/CVE-2020-13753) for WebKitGTK
 - [CVE-2021-?????](https://hackerone.com/reports/1283871) for Homebrew
-- [CVE-2023-28339](https://nvd.nist.gov/vuln/detail/CVE-2023-28339) for OpenDoas
 - [CVE-2023-28100](https://nvd.nist.gov/vuln/detail/CVE-2023-28100) for Flatpak
+- [CVE-2023-28339](https://nvd.nist.gov/vuln/detail/CVE-2023-28339) for OpenDoas
 - [CVE-2023-?????](https://github.com/slicer69/doas/issues/110) for doas (except on OpenBSD >=6.2)
