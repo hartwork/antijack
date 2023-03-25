@@ -20,13 +20,21 @@ and is its counterpart in some sense, hence the name.
   a la `bwrap --seccomp 3 [..] 3< <(antijack --dump /dev/stdout)`.
 - demo mitigation at syscall level for Linux leveraging
   [libseccomp](https://github.com/seccomp/libseccomp).
-  **May not be enough!**
+  **May not be enough!**, more on that below.
 
 It should be noted that:
 
 - Alternative options for mitigations include:
   - `setsid(2)` (or `setsid(1)`) with drawbacks or
   - use of a PTY.
+- With security in mind, we need to ask
+  "why should access to the controlling terminal be granted?"
+  not "why should it be taken away?"
+  Use of a PTY by default is a consequence of that.
+  The fact that `TIOCLINUX` attacks came to awareness later than `TIOCSTI`
+  indicates that when the next attack like these will be discovered,
+  those who are blocking single ioctls will have to adjust while
+  those using a PTY may already by protected.
 - The defaults for `su` and `sudo` are known-vulnerable as of 2023-03-16.
   - For `su` it takes `--pty`.
   - For `sudo` it takes `Defaults use_pty` in `/etc/sudoers`.
