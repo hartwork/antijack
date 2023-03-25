@@ -24,7 +24,7 @@ and is its counterpart in some sense, hence the name.
 
 It should be noted that:
 
-- Alternative options for mitigations include:
+- Alternative options for mitigation include:
   - `setsid(2)` (or `setsid(1)`) with drawbacks or
   - use of a PTY.
 - With security in mind, we need to ask
