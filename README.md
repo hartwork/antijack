@@ -98,8 +98,8 @@ Bad system call
 
 $ antijack --dump filter.bpf
 
-$ wc -c filter.bpf
-112 filter.bpf
+$ wc -c < filter.bpf
+112
 ```
 
 
