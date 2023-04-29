@@ -135,6 +135,8 @@ $ wc -c < filter.bpf
 - [CVE-2023-28100](https://nvd.nist.gov/vuln/detail/CVE-2023-28100) for Flatpak
 - [CVE-2023-28339](https://nvd.nist.gov/vuln/detail/CVE-2023-28339) for OpenDoas
 - [CVE-2023-?????](https://github.com/slicer69/doas/issues/110) for doas (except on OpenBSD >=6.2)
+- [CVE-2023-?????](https://gitlab.com/edneville/please/-/issues/13) for please
+- [CVE-2023-?????](https://github.com/illiliti/ssu/issues/13) for ssu
 
 ---
 [Sebastian Pipping](https://github.com/hartwork), Berlin, 2023
