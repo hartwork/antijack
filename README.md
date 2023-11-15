@@ -135,7 +135,7 @@ $ wc -c < filter.bpf
 - [CVE-2023-28100](https://nvd.nist.gov/vuln/detail/CVE-2023-28100) for Flatpak
 - [CVE-2023-28339](https://nvd.nist.gov/vuln/detail/CVE-2023-28339) for OpenDoas
 - [CVE-2023-?????](https://github.com/slicer69/doas/issues/110) for doas (except on OpenBSD >=6.2)
-- [CVE-2023-?????](https://gitlab.com/edneville/please/-/issues/13) for please
+- [CVE-2023-46277](https://nvd.nist.gov/vuln/detail/CVE-2023-46277) for pleaser/please
 - [CVE-2023-?????](https://github.com/illiliti/ssu/issues/13) for ssu
 - [CVE-2023-?????](https://github.com/memorysafety/sudo-rs/issues/159) for sudo-rs
 
