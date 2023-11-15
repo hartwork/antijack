@@ -137,6 +137,7 @@ $ wc -c < filter.bpf
 - [CVE-2023-?????](https://github.com/slicer69/doas/issues/110) for doas (except on OpenBSD >=6.2)
 - [CVE-2023-?????](https://gitlab.com/edneville/please/-/issues/13) for please
 - [CVE-2023-?????](https://github.com/illiliti/ssu/issues/13) for ssu
+- [CVE-2023-?????](https://github.com/memorysafety/sudo-rs/issues/159) for sudo-rs
 
 ---
 [Sebastian Pipping](https://github.com/hartwork), Berlin, 2023
