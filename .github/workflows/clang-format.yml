@@ -3,11 +3,16 @@
 
 name: Enforce clang-format
 
+# Drop permissions to minimum, for security
+permissions:
+  contents: read
+
 on:
   pull_request:
   push:
   schedule:
     - cron: '0 2 * * 5'  # Every Friday at 2am
+  workflow_dispatch:
 
 jobs:
   clang-format:
